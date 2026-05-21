@@ -13,8 +13,8 @@ class Settings(BaseSettings):
     groq_api_key: str = ""
     gemini_api_key: str = ""
 
-    stripe_secret_key: str = ""
-    stripe_webhook_secret: str = ""
+    razorpay_key_id: str = ""
+    razorpay_key_secret: str = ""
 
     upstash_redis_url: str = ""
     upstash_redis_token: str = ""

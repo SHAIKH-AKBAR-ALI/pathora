@@ -103,20 +103,20 @@
 
 ---
 
-## Phase 7 — Stripe Subscription
+## Phase 7 — Razorpay Subscription
 **Goal:** Free and Pro plans working end to end.
-**Status:** [ ] NOT STARTED
+**Status:** [x] COMPLETE (May 22, 2026)
 
 ### Tasks
-- [ ] Stripe products + prices created (free + pro)
-- [ ] Stripe checkout session endpoint
-- [ ] Stripe webhook endpoint with signature verification
-- [ ] Idempotency protection (store processed webhook event IDs)
-- [ ] User role updated to `paid` after successful payment
-- [ ] Subscription cancellation handled via webhook
-- [ ] Usage limits enforced based on plan
-- [ ] Upgrade prompt shown when free limit hit (429)
-- [ ] Frontend: pricing page, upgrade button, billing portal
+- [x] Razorpay products + prices created (free + pro)
+- [x] Razorpay order creation endpoint
+- [x] Razorpay signature verification
+- [x] Idempotency protection (check if payment already processed)
+- [x] User role updated to `paid` after successful payment
+- [x] Subscription cancellation handled (V1: manual/webhook)
+- [x] Usage limits enforced based on plan
+- [x] Upgrade prompt shown when free limit hit (429)
+- [x] Frontend: pricing page, upgrade button, billing portal
 
 ---
 

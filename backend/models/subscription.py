@@ -23,6 +23,7 @@ class Subscription(Base):
     plan: Mapped[str] = mapped_column(
         Enum("free", "pro", name="subscription_plan"), nullable=False, default="free"
     )
+    current_period_end: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False

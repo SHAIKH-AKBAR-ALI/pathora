@@ -16,7 +16,7 @@ Product name: Pathora
 - Tailwind CSS
 - shadcn/ui
 - Zustand (state management)
-- Stripe.js (payments)
+- Razorpay (payments)
 
 ### Backend
 - FastAPI (Python)
@@ -53,8 +53,8 @@ Product name: Pathora
 - GitHub Secrets (env vars — never .env on server)
 
 ### Payments + Auth
-- Stripe Subscriptions + Webhooks
-- Stripe webhook signature verification + idempotency protection
+- Razorpay Payments + Webhooks
+- Razorpay signature verification + idempotency protection
 - Supabase Auth (email + password + Google OAuth)
 - JWT via Supabase (short-lived access tokens + refresh rotation)
 - Never store JWT in localStorage — use secure HTTP-only cookies
@@ -153,12 +153,12 @@ V1: two queues only — high_priority and low_priority.
 - Per-IP rate limiting on public endpoints
 - Input validation + max length on all user inputs
 - Prompt injection guard in every system prompt
-- Stripe webhook signature + timestamp verification
-- Idempotency protection — store processed webhook event IDs
+- Razorpay signature + timestamp verification
+- Idempotency protection — store processed payment event IDs
 - .env never on server — use GitHub Secrets
 - HTTPS only (Vercel auto + NGINX on EC2)
 - File upload: MIME type validation + extension check + max size
-- Never store card details — Stripe handles everything
+- Never store card details — Razorpay handles everything
 - Soft deletes on all tables (deleted_at timestamp)
 
 ---
@@ -241,8 +241,8 @@ SUPABASE_SERVICE_ROLE_KEY
 OPENAI_API_KEY
 GROQ_API_KEY
 GEMINI_API_KEY
-STRIPE_SECRET_KEY
-STRIPE_WEBHOOK_SECRET
+RAZORPAY_KEY_ID
+RAZORPAY_KEY_SECRET
 UPSTASH_REDIS_URL
 UPSTASH_REDIS_TOKEN
 AWS_ACCESS_KEY_ID
@@ -269,7 +269,7 @@ AWS_REGION
 6. "Explain this simply" button (5/day free)
 7. "Why am I learning this?" button
 8. Usage limits enforcement
-9. Stripe subscription flow (free + pro)
+9. Razorpay payment flow (free + pro)
 10. Admin panel (users, plans, revenue, ban/suspend, usage stats)
 11. NGINX setup on EC2
 12. Rate limiting
@@ -335,3 +335,4 @@ AWS_REGION
 - Why endpoint: no usage limit
 - Celery beat schedules use crontab (not intervals): daily reset at midnight, monthly reset on 1st
 - Streak is per-roadmap, based on UTC timezone
+- Payment provider is Razorpay (India), amount in paise (99900 = ₹999/month), supports UPI + cards + netbanking
