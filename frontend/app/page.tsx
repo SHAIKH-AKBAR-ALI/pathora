@@ -1,6 +1,7 @@
 // ─────────────────────────────────────────────────────────────────
 // Pathora Landing Page — Phase 9
 // ─────────────────────────────────────────────────────────────────
+import Link from "next/link";
 
 // ── DATA ─────────────────────────────────────────────────────────
 
@@ -157,12 +158,12 @@ function Nav() {
         </div>
 
         <div className="flex items-center gap-2.5">
-          <button className="hidden md:block text-[13px] text-[#6b7585] hover:text-[#e8edf4] transition-colors px-4 py-2 rounded-lg hover:bg-white/[.04]">
+          <Link href="/login" className="hidden md:block text-[13px] text-[#6b7585] hover:text-[#e8edf4] transition-colors px-4 py-2 rounded-lg hover:bg-white/[.04]">
             Sign in
-          </button>
-          <button className="text-[13px] bg-[#00c896] hover:bg-[#00b484] text-[#05080f] font-bold px-5 py-2.5 rounded-lg transition-colors duration-150">
+          </Link>
+          <Link href="/signup" className="text-[13px] bg-[#00c896] hover:bg-[#00b484] text-[#05080f] font-bold px-5 py-2.5 rounded-lg transition-colors duration-150">
             Start Free
-          </button>
+          </Link>
         </div>
       </div>
     </nav>
@@ -234,10 +235,10 @@ function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="inline-flex items-center justify-center gap-2 bg-[#00c896] hover:bg-[#00b484] text-[#05080f] font-bold text-[15px] px-9 py-4 rounded-xl transition-all duration-150 hover:scale-[1.025] active:scale-[.975] accent-glow-animate">
+            <Link href="/signup" className="inline-flex items-center justify-center gap-2 bg-[#00c896] hover:bg-[#00b484] text-[#05080f] font-bold text-[15px] px-9 py-4 rounded-xl transition-all duration-150 hover:scale-[1.025] active:scale-[.975] accent-glow-animate">
               Start Learning Free
               <span aria-hidden="true" className="text-[18px] leading-none">→</span>
-            </button>
+            </Link>
             <a
               href="#how-it-works"
               className="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/20 text-[#e8edf4] text-[15px] px-9 py-4 rounded-xl transition-all duration-150 hover:bg-white/[.04]"
@@ -377,10 +378,10 @@ function RoadmapPreview() {
               Every roadmap is broken into phases with clear topics, estimated days, and logical progression.
               No more random YouTube rabbit holes.
             </p>
-            <button className="inline-flex items-center gap-2 text-[#00c896] font-semibold text-[15px] hover:gap-3 transition-all duration-150 group">
+            <Link href="/signup" className="inline-flex items-center gap-2 text-[#00c896] font-semibold text-[15px] hover:gap-3 transition-all duration-150 group">
               Generate your own
               <span aria-hidden="true" className="transition-transform group-hover:translate-x-1 duration-150">→</span>
-            </button>
+            </Link>
           </div>
 
           {/* Roadmap card */}
@@ -478,9 +479,9 @@ function Pricing() {
               <span className="font-display text-5xl font-bold">₹0</span>
               <span className="text-[#6b7585] text-sm mb-2">/month</span>
             </div>
-            <button className="w-full py-3 rounded-xl border border-white/10 text-[14px] font-semibold hover:bg-white/[.04] transition-colors mb-8">
+            <Link href="/signup" className="block w-full py-3 rounded-xl border border-white/10 text-[14px] font-semibold hover:bg-white/[.04] transition-colors mb-8 text-center">
               Get started free
-            </button>
+            </Link>
             <ul className="space-y-3">
               {FREE_FEATURES.map((f) => (
                 <li key={f} className="flex items-center gap-3 text-[13.5px] text-[#6b7585]">
@@ -503,9 +504,9 @@ function Pricing() {
               <span className="font-display text-5xl font-bold">₹999</span>
               <span className="text-[#6b7585] text-sm mb-2">/month</span>
             </div>
-            <button className="w-full py-3 rounded-xl bg-[#00c896] hover:bg-[#00b484] text-[#05080f] text-[14px] font-bold transition-colors mb-8">
+            <Link href="/signup" className="block w-full py-3 rounded-xl bg-[#00c896] hover:bg-[#00b484] text-[#05080f] text-[14px] font-bold transition-colors mb-8 text-center">
               Upgrade to Pro
-            </button>
+            </Link>
             <ul className="space-y-3">
               {PRO_FEATURES.map((f) => (
                 <li key={f} className="flex items-center gap-3 text-[13.5px]">
@@ -606,9 +607,9 @@ function CTASection() {
               Stop wondering what to learn next. Get a personalized path built for your exact goal — in under
               10 seconds.
             </p>
-            <button className="inline-flex items-center gap-2 bg-[#00c896] hover:bg-[#00b484] text-[#05080f] font-bold text-[15px] px-11 py-4 rounded-xl transition-all duration-150 hover:scale-[1.025] active:scale-[.975] accent-glow">
+            <Link href="/signup" className="inline-flex items-center gap-2 bg-[#00c896] hover:bg-[#00b484] text-[#05080f] font-bold text-[15px] px-11 py-4 rounded-xl transition-all duration-150 hover:scale-[1.025] active:scale-[.975] accent-glow">
               Start Learning Free <span aria-hidden="true">→</span>
-            </button>
+            </Link>
             <p className="text-[#6b7585] text-[12px] mt-5 font-mono">
               No credit card required · Free plan forever
             </p>

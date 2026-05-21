@@ -155,19 +155,19 @@
 
 ## Phase 10 — Frontend App UI
 **Goal:** Full user-facing app UI connected to backend.
-**Status:** [ ] NOT STARTED
+**Status:** [x] COMPLETE (May 22, 2026)
 
 ### Tasks
-- [ ] Auth pages (signup, login, Google OAuth)
-- [ ] Dashboard page (roadmaps list, progress, streak)
-- [ ] Roadmap generator page (topic picker form)
-- [ ] Roadmap detail page (phases, topics, checkboxes)
-- [ ] Progress bar + streak UI
-- [ ] Explain + Why buttons with usage counter
-- [ ] Upgrade modal (when limit hit)
-- [ ] Billing/account page
-- [ ] Mobile responsive
-- [ ] Connected to all backend endpoints
+- [x] Auth pages (signup, login, Google OAuth)
+- [x] Dashboard page (roadmaps list, progress, streak)
+- [x] Roadmap generator page (topic picker form)
+- [x] Roadmap detail page (phases, topics, checkboxes)
+- [x] Progress bar + streak UI
+- [x] Explain + Why buttons with usage counter
+- [x] Upgrade modal (when limit hit)
+- [x] Billing/account page
+- [x] Mobile responsive
+- [x] Connected to all backend endpoints
 
 ---
 

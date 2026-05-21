@@ -17,7 +17,9 @@
       "Bash(del \"D:\\\\PROJECTS\\\\edtech\\\\backend\\\\services\\\\stripe_service.py\")",
       "Bash(del \"D:\\\\PROJECTS\\\\edtech\\\\backend\\\\schemas\\\\stripe.py\")",
       "Bash(python -c \"from backend.core.config import settings; print\\('key_id:', settings.razorpay_key_id[:10] if settings.razorpay_key_id else 'empty'\\); print\\('key_secret:', 'set' if settings.razorpay_key_secret else 'empty'\\)\")",
-      "mcp__supabase__execute_sql"
+      "mcp__supabase__execute_sql",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('version','?'\\)\\)\")",
+      "Bash(npx *)"
     ]
   },
   "enableAllProjectMcpServers": true,
