@@ -326,3 +326,7 @@ AWS_REGION
 - Migration command: alembic -c backend/alembic.ini upgrade head (run from project root)
 - bcrypt must be pinned to 4.0.1 (newer versions break passlib)
 - uvicorn run command: uvicorn backend.main:app --reload (from project root)
+- Groq model: llama-3.1-8b-instant
+- Gemini model: gemini-2.0-flash
+- OpenAI model: gpt-4o-mini (paid users)
+- Production uvicorn command: uvicorn backend.main:app --proxy-headers --forwarded-allow-ips="*"

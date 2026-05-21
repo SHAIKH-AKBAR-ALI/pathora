@@ -7,6 +7,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from backend.core.config import settings
 from backend.core.database import get_db
 from backend.core.dependencies import get_current_user
+from backend.core.limiter import limiter
+from backend.core.middleware import get_ip_key
 from backend.core.security import create_access_token, create_refresh_token, decode_token, hash_password, verify_password
 from backend.repositories.user_repository import create_user, get_user_by_email, get_user_by_id
 from backend.schemas.auth import APIResponse, LoginRequest, SignupRequest, UserResponse
@@ -22,7 +24,8 @@ _COOKIE_OPTS = dict(
 
 
 @router.post("/signup", response_model=APIResponse, status_code=status.HTTP_201_CREATED)
-async def signup(body: SignupRequest, response: Response, db: AsyncSession = Depends(get_db)):
+@limiter.limit("10/minute", key_func=get_ip_key)
+async def signup(request: Request, body: SignupRequest, response: Response, db: AsyncSession = Depends(get_db)):
     existing = await get_user_by_email(db, body.email)
     if existing:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Email already registered")
@@ -62,7 +65,8 @@ async def signup(body: SignupRequest, response: Response, db: AsyncSession = Dep
 
 
 @router.post("/login", response_model=APIResponse)
-async def login(body: LoginRequest, response: Response, db: AsyncSession = Depends(get_db)):
+@limiter.limit("10/minute", key_func=get_ip_key)
+async def login(request: Request, body: LoginRequest, response: Response, db: AsyncSession = Depends(get_db)):
     user = await get_user_by_email(db, body.email)
     if not user or not user.hashed_password or not verify_password(body.password, user.hashed_password):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
@@ -96,13 +100,15 @@ async def login(body: LoginRequest, response: Response, db: AsyncSession = Depen
 
 
 @router.post("/logout", response_model=APIResponse)
-async def logout(response: Response):
+@limiter.limit("60/minute")
+async def logout(request: Request, response: Response):
     response.delete_cookie("access_token", path="/")
     response.delete_cookie("refresh_token", path="/")
     return APIResponse(success=True, data="Logged out", error=None)
 
 
 @router.post("/refresh", response_model=APIResponse)
+@limiter.limit("60/minute")
 async def refresh(request: Request, response: Response, db: AsyncSession = Depends(get_db)):
     token = request.cookies.get("refresh_token")
     if not token:
@@ -132,7 +138,8 @@ async def refresh(request: Request, response: Response, db: AsyncSession = Depen
 
 
 @router.get("/me", response_model=APIResponse)
-async def me(current_user=Depends(get_current_user)):
+@limiter.limit("60/minute")
+async def me(request: Request, current_user=Depends(get_current_user)):
     return APIResponse(
         success=True,
         data=UserResponse(

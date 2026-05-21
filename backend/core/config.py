@@ -1,3 +1,4 @@
+# Production: run uvicorn with --proxy-headers --forwarded-allow-ips="*" behind NGINX
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 

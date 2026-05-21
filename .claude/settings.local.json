@@ -10,7 +10,8 @@
       "Bash(Get-Content *)",
       "Bash(alembic upgrade *)",
       "Bash(.venv/Scripts/python.exe -m alembic -c backend/alembic.ini upgrade head)",
-      "Bash(python -c \"import sys; sys.path.insert\\(0,'D:/PROJECTS/edtech/backend'\\); from core.config import settings; print\\(repr\\(settings.database_url\\)\\)\")"
+      "Bash(python -c \"import sys; sys.path.insert\\(0,'D:/PROJECTS/edtech/backend'\\); from core.config import settings; print\\(repr\\(settings.database_url\\)\\)\")",
+      "Bash(Remove-Item *)"
     ]
   },
   "enableAllProjectMcpServers": true,
