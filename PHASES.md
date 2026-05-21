@@ -179,9 +179,9 @@
 | 2 | Database Schema | [x] |
 | 3 | Authentication | [x] |
 | 4 | Core Backend | [x] |
-| 5 | Roadmap Generation | [ ] |
+| 5 | Roadmap Generation | [x] |
 | 6 | Progress Tracking | [ ] |
 | 7 | Stripe Subscription | [ ] |
 | 8 | Admin Panel | [ ] |
 | 9 | Landing Page | [ ] |
-| 10 | Frontend App UI | [ ] | [ ] | [ ] | [ ] |
+| 10 | Frontend App UI | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |

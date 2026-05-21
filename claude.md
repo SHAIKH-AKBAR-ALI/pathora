@@ -330,3 +330,6 @@ AWS_REGION
 - Gemini model: gemini-2.0-flash
 - OpenAI model: gpt-4o-mini (paid users)
 - Production uvicorn command: uvicorn backend.main:app --proxy-headers --forwarded-allow-ips="*"
+- Redis caching enabled for roadmaps (24hr TTL, keyed by SHA-256 of topic+difficulty+goal)
+- Explain endpoint: 5/day limit for free users
+- Why endpoint: no usage limit

@@ -66,26 +66,26 @@ async def _call_gemini(prompt: str) -> str:
     return response.text or ""
 
 
-async def route_llm(prompt: str, user_role: str) -> str:
-    """Call LLM based on user role. Paid/admin: GPT-4o-mini → Groq. Free: Groq → Gemini. 503 if all fail."""
+async def route_llm(prompt: str, user_role: str) -> tuple[str, str]:
+    """Call LLM based on user role. Returns (content, model_name). 503 if all providers fail."""
     if len(prompt) > 8000:
         # Rough guard: ~2000 tokens ≈ 8000 chars
         prompt = prompt[:8000]
 
-    providers = (
-        [("openai", _call_openai), ("groq", _call_groq)]
+    providers: list[tuple[str, str, object]] = (
+        [("gpt-4o-mini", "openai", _call_openai), ("llama-3.1-8b-instant", "groq", _call_groq)]
         if user_role in ("paid", "admin")
-        else [("groq", _call_groq), ("gemini", _call_gemini)]
+        else [("llama-3.1-8b-instant", "groq", _call_groq), ("gemini-2.0-flash", "gemini", _call_gemini)]
     )
 
     last_error: Exception | None = None
-    for name, fn in providers:
+    for model_name, provider_name, fn in providers:
         try:
             result = await fn(prompt)
-            logger.info("LLM call succeeded via %s (role=%s)", name, user_role)
-            return result
+            logger.info("LLM call succeeded via %s (role=%s)", provider_name, user_role)
+            return result, model_name
         except Exception as exc:
-            logger.warning("LLM provider %s failed: %s", name, exc)
+            logger.warning("LLM provider %s failed: %s", provider_name, exc)
             last_error = exc
 
     logger.error("All LLM providers failed. Last error: %s", last_error)
