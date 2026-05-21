@@ -71,20 +71,20 @@
 
 ## Phase 5 — Roadmap Generation
 **Goal:** Users can generate AI roadmaps based on topic + level + goal.
-**Status:** [ ] NOT STARTED
+**Status:** [x] COMPLETE (May 21, 2026) — 13/13 tests passing
 
 ### Tasks
-- [ ] Topic + difficulty + goal picker UI (frontend)
-- [ ] Roadmap generation endpoint (backend)
-- [ ] Usage limit check before every AI call
-- [ ] LLM router used for generation
-- [ ] Roadmap saved to DB
-- [ ] Redis cache by topic+level+goal hash
-- [ ] Celery job state tracking for generation
-- [ ] Thumbs up/down rating on roadmap
-- [ ] AI call logged to DB (user_id, model, tokens, latency)
-- [ ] "Explain this simply" button (5/day free limit)
-- [ ] "Why am I learning this?" button
+- [x] Topic + difficulty + goal picker UI (frontend)
+- [x] Roadmap generation endpoint (backend)
+- [x] Usage limit check before every AI call
+- [x] LLM router used for generation
+- [x] Roadmap saved to DB
+- [x] Redis cache by topic+level+goal hash
+- [x] Celery job state tracking for generation
+- [x] Thumbs up/down rating on roadmap
+- [x] AI call logged to DB (user_id, model, tokens, latency)
+- [x] "Explain this simply" button (5/day free limit)
+- [x] "Why am I learning this?" button
 
 ---
 

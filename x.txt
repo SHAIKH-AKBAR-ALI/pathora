@@ -1,0 +1,34 @@
+13/13 passed. 0 warnings.
+
+  ---
+  What was created:
+
+  pytest.ini (project root)
+  - pythonpath = . — makes backend.* importable
+  - asyncio_mode = auto + asyncio_default_fixture_loop_scope = session
+  - filterwarnings — suppresses httpx per-request cookie deprecation and pytest-asyncio scope
+   warning
+
+  backend/tests/__init__.py — empty, enables test discovery
+
+  backend/tests/conftest.py
+  - disable_secure_cookies (session, autouse) — patches _COOKIE_OPTS["secure"] = False so
+  TestClient (HTTP) can store cookies
+  - client (session) — single TestClient for entire run
+  - clear_client_cookies (function, autouse) — clears cookie jar before every test to prevent
+   auth leakage
+  - test_user (module) — creates a fresh user per test module via signup; returns {email,
+  password, cookies}
+  - auth_cookies (module) — thin alias returning test_user["cookies"]
+  - mock_llm (function) — patches route_llm with AsyncMock returning fake JSON; no real LLM
+  calls in tests
+
+  backend/tests/test_auth.py — 7 tests: signup valid/duplicate/weak-password, login
+  valid/wrong-password, /auth/me unauthenticated/authenticated
+
+  backend/tests/test_roadmaps.py — 6 tests: generate unauthenticated/authenticated, get by
+  ID, get wrong-user (404), explain topic, why topic
+  - unlimited_usage (function, autouse) — monkeypatches _FREE_ROADMAP_LIMIT and
+  _FREE_EXPLANATION_LIMIT to 100 so real DB counters don't block tests
+
+✻ Crunched for 9m 47s
