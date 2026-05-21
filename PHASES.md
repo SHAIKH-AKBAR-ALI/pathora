@@ -180,8 +180,8 @@
 | 3 | Authentication | [x] |
 | 4 | Core Backend | [x] |
 | 5 | Roadmap Generation | [x] |
-| 6 | Progress Tracking | [ ] |
-| 7 | Stripe Subscription | [ ] |
-| 8 | Admin Panel | [ ] |
-| 9 | Landing Page | [ ] |
-| 10 | Frontend App UI | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 6 | Progress Tracking | [x] |
+| 7 | Razorpay Subscription | [x] |
+| 8 | Admin Panel | [x] |
+| 9 | Landing Page | [x] |
+| 10 | Frontend App UI | [ ] |

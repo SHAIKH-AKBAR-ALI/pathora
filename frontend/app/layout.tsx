@@ -18,6 +18,19 @@ export const metadata: Metadata = {
   title: "Pathora — AI-Powered Learning Roadmaps",
   description:
     "Pick a topic, set your goal, and get a personalized step-by-step learning roadmap powered by AI.",
+  openGraph: {
+    title: "Pathora — AI-Powered Learning Roadmaps",
+    description:
+      "Pick a topic, set your goal, and get a personalized step-by-step learning roadmap powered by AI.",
+    type: "website",
+    images: [{ url: "/og-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pathora — AI-Powered Learning Roadmaps",
+    description:
+      "Pick a topic, set your goal, and get a personalized step-by-step learning roadmap powered by AI.",
+  },
 };
 
 export default function RootLayout({

@@ -172,12 +172,12 @@ function Nav() {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      <div className="absolute inset-0 dot-grid opacity-50 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,transparent_30%,#05080f_80%)] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-[#00c896]/[.05] blur-[120px] pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 dot-grid opacity-50 pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,transparent_30%,#05080f_80%)] pointer-events-none" />
+      <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-[#00c896]/[.05] blur-[120px] pointer-events-none" />
 
       {/* Floating nodes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none hidden md:block">
+      <div aria-hidden="true" className="absolute inset-0 overflow-hidden pointer-events-none select-none hidden md:block">
         <div className="absolute top-[18%] right-[9%] animate-float" style={{ animationDelay: "0s" }}>
           <div className="w-14 h-14 rounded-full border border-[#00c896]/35 bg-[#00c896]/[.06] flex items-center justify-center text-[#00c896] text-xs font-mono">
             P1
@@ -216,7 +216,7 @@ function Hero() {
       <div className="relative max-w-6xl mx-auto px-5 py-28">
         <div className="max-w-[680px]">
           <div className="inline-flex items-center gap-2 text-[11px] text-[#00c896] border border-[#00c896]/30 bg-[#00c896]/[.07] px-3.5 py-1.5 rounded-full mb-9 font-mono tracking-widest uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00c896] animate-pulse-dot" />
+            <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-[#00c896] animate-pulse-dot" />
             AI-Powered Learning Paths
           </div>
 
@@ -236,7 +236,7 @@ function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="inline-flex items-center justify-center gap-2 bg-[#00c896] hover:bg-[#00b484] text-[#05080f] font-bold text-[15px] px-9 py-4 rounded-xl transition-all duration-150 hover:scale-[1.025] active:scale-[.975] accent-glow-animate">
               Start Learning Free
-              <span className="text-[18px] leading-none">→</span>
+              <span aria-hidden="true" className="text-[18px] leading-none">→</span>
             </button>
             <a
               href="#how-it-works"
@@ -300,11 +300,12 @@ function HowItWorks() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-10 relative">
-          <div className="hidden md:block absolute top-[2.85rem] left-[calc(33%+1.5rem)] right-[calc(33%+1.5rem)] h-px bg-gradient-to-r from-[#00c896]/25 via-[#f0a500]/25 to-[#00c896]/25" />
+          <div aria-hidden="true" className="hidden md:block absolute top-[2.85rem] left-[calc(33%+1.5rem)] right-[calc(33%+1.5rem)] h-px bg-gradient-to-r from-[#00c896]/25 via-[#f0a500]/25 to-[#00c896]/25" />
 
           {steps.map((step, i) => (
             <div key={i} className="relative">
               <div
+                aria-hidden="true"
                 className="font-display text-[80px] font-extrabold leading-none mb-1 select-none"
                 style={{ color: step.color, opacity: 0.1 }}
               >
@@ -329,7 +330,7 @@ function HowItWorks() {
 function Features() {
   return (
     <section id="features" className="py-32 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(0,200,150,.04)_0%,transparent_60%)] pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(0,200,150,.04)_0%,transparent_60%)] pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5">
         <div className="text-center mb-24">
@@ -361,7 +362,7 @@ function Features() {
 function RoadmapPreview() {
   return (
     <section className="py-32 relative overflow-hidden">
-      <div className="absolute right-0 top-0 bottom-0 w-2/3 bg-[radial-gradient(ellipse_60%_80%_at_100%_50%,rgba(0,200,150,.04)_0%,transparent_65%)] pointer-events-none" />
+      <div aria-hidden="true" className="absolute right-0 top-0 bottom-0 w-2/3 bg-[radial-gradient(ellipse_60%_80%_at_100%_50%,rgba(0,200,150,.04)_0%,transparent_65%)] pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -378,7 +379,7 @@ function RoadmapPreview() {
             </p>
             <button className="inline-flex items-center gap-2 text-[#00c896] font-semibold text-[15px] hover:gap-3 transition-all duration-150 group">
               Generate your own
-              <span className="transition-transform group-hover:translate-x-1 duration-150">→</span>
+              <span aria-hidden="true" className="transition-transform group-hover:translate-x-1 duration-150">→</span>
             </button>
           </div>
 
@@ -458,7 +459,7 @@ function RoadmapPreview() {
 function Pricing() {
   return (
     <section id="pricing" className="py-32 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,rgba(0,200,150,.04)_0%,transparent_60%)] pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,rgba(0,200,150,.04)_0%,transparent_60%)] pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-5">
         <div className="text-center mb-20">
@@ -483,7 +484,7 @@ function Pricing() {
             <ul className="space-y-3">
               {FREE_FEATURES.map((f) => (
                 <li key={f} className="flex items-center gap-3 text-[13.5px] text-[#6b7585]">
-                  <span className="text-[#6b7585]/40 text-[10px]">◦</span>
+                  <span aria-hidden="true" className="text-[#6b7585]/40 text-[10px]">◦</span>
                   {f}
                 </li>
               ))}
@@ -508,7 +509,7 @@ function Pricing() {
             <ul className="space-y-3">
               {PRO_FEATURES.map((f) => (
                 <li key={f} className="flex items-center gap-3 text-[13.5px]">
-                  <span className="text-[#00c896] text-[10px]">◆</span>
+                  <span aria-hidden="true" className="text-[#00c896] text-[10px]">◆</span>
                   {f}
                 </li>
               ))}
@@ -535,7 +536,7 @@ function Testimonials() {
               key={i}
               className="p-7 rounded-2xl border border-white/[.05] bg-[#0b0f1a]/60 hover:border-white/10 transition-colors duration-300"
             >
-              <p className="text-[#00c896] text-[32px] font-display leading-none mb-4">&ldquo;</p>
+              <p aria-hidden="true" className="text-[#00c896] text-[32px] font-display leading-none mb-4">&ldquo;</p>
               <p className="text-[#b8c1cf] text-[14px] leading-relaxed mb-7">{t.quote}</p>
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-[#111827] border border-white/10 flex items-center justify-center text-[10px] font-bold text-[#00c896] flex-shrink-0">
@@ -591,9 +592,9 @@ function CTASection() {
     <section className="py-28 px-5">
       <div className="max-w-4xl mx-auto">
         <div className="relative rounded-3xl border border-[#00c896]/22 bg-[#0b0f1a] p-16 overflow-hidden text-center">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_50%,rgba(0,200,150,.07)_0%,transparent_65%)] pointer-events-none" />
-          <div className="absolute top-0 left-0 w-32 h-32 border-t border-l border-[#00c896]/15 rounded-tl-3xl pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-32 h-32 border-b border-r border-[#00c896]/15 rounded-br-3xl pointer-events-none" />
+          <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_50%,rgba(0,200,150,.07)_0%,transparent_65%)] pointer-events-none" />
+          <div aria-hidden="true" className="absolute top-0 left-0 w-32 h-32 border-t border-l border-[#00c896]/15 rounded-tl-3xl pointer-events-none" />
+          <div aria-hidden="true" className="absolute bottom-0 right-0 w-32 h-32 border-b border-r border-[#00c896]/15 rounded-br-3xl pointer-events-none" />
 
           <div className="relative">
             <h2 className="font-display text-[clamp(2.25rem,5vw,3.5rem)] font-bold mb-5 leading-[1.05]">
@@ -606,7 +607,7 @@ function CTASection() {
               10 seconds.
             </p>
             <button className="inline-flex items-center gap-2 bg-[#00c896] hover:bg-[#00b484] text-[#05080f] font-bold text-[15px] px-11 py-4 rounded-xl transition-all duration-150 hover:scale-[1.025] active:scale-[.975] accent-glow">
-              Start Learning Free →
+              Start Learning Free <span aria-hidden="true">→</span>
             </button>
             <p className="text-[#6b7585] text-[12px] mt-5 font-mono">
               No credit card required · Free plan forever
