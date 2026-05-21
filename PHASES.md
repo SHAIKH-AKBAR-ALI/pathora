@@ -137,19 +137,19 @@
 
 ## Phase 9 — Frontend Landing Page
 **Goal:** Public landing page live on Vercel.
-**Status:** [ ] NOT STARTED
+**Status:** [x] COMPLETE (May 22, 2026)
 
 ### Tasks
-- [ ] Section 1: Hero
-- [ ] Section 2: How it works
-- [ ] Section 3: Features
-- [ ] Section 4: Roadmap demo/preview
-- [ ] Section 5: Pricing
-- [ ] Section 6: Testimonials
-- [ ] Section 7: FAQ
-- [ ] Section 8: CTA
-- [ ] Section 9: Footer
-- [ ] Deployed to Vercel
+- [x] Section 1: Hero
+- [x] Section 2: How it works
+- [x] Section 3: Features
+- [x] Section 4: Roadmap demo/preview
+- [x] Section 5: Pricing
+- [x] Section 6: Testimonials
+- [x] Section 7: FAQ
+- [x] Section 8: CTA
+- [x] Section 9: Footer
+- [x] Deployed to Vercel
 
 ---
 
