@@ -1,4 +1,6 @@
-# Pathora — Build Phases
+# Nexpath — Build Phases
+
+> Product renamed from Pathora to Nexpath on May 22, 2026. UI optimization pass completed.
 
 > ⚠️ STRICT RULE: Do NOT start the next phase until ALL tasks in the current phase are marked [x] complete.
 

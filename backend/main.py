@@ -18,7 +18,7 @@ from backend.core.middleware import (
 )
 
 # Production: run uvicorn with --proxy-headers --forwarded-allow-ips="*" behind NGINX
-app = FastAPI(title="Pathora API", version="1.0.0")
+app = FastAPI(title="Nexpath API", version="1.0.0")
 app.state.limiter = limiter
 
 app.add_middleware(
@@ -43,4 +43,4 @@ app.include_router(admin_router)
 
 @app.get("/health")
 async def health_check():
-    return {"success": True, "data": "Pathora API running", "error": None}
+    return {"success": True, "data": "Nexpath API running", "error": None}

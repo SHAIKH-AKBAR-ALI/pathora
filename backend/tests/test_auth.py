@@ -4,7 +4,7 @@ _TEST_PASSWORD = "TestPass1!"
 
 
 def _email():
-    return f"auth_{uuid.uuid4().hex[:8]}@pathora-test.com"
+    return f"auth_{uuid.uuid4().hex[:8]}@nexpath-test.com"
 
 
 def test_signup_valid(client):

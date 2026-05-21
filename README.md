@@ -1,6 +1,6 @@
-# Pathora
+# Nexpath
 
-AI-powered personalized learning roadmap platform. Pick a topic, set your goal, and get a structured, phase-by-phase curriculum tailored to your exact needs.
+Nexpath is an AI-powered personalized learning roadmap platform. Pick a topic, set your goal, and get a structured, phase-by-phase curriculum tailored to your exact needs.
 
 ## Tech Stack
 

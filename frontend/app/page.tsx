@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────
-// Pathora Landing Page — Phase 9
+// Nexpath Landing Page — Phase 9
 // ─────────────────────────────────────────────────────────────────
 import Link from "next/link";
 
@@ -68,7 +68,7 @@ const TESTIMONIALS = [
     name: "Arjun Mehta",
     role: "CS Student, IIT Delhi",
     quote:
-      "I used to spend hours figuring out what to learn next. Pathora handed me a complete plan in 10 seconds. Genuinely changed how I study.",
+      "I used to spend hours figuring out what to learn next. Nexpath handed me a complete plan in 10 seconds. Genuinely changed how I study.",
   },
   {
     initials: "PS",
@@ -88,8 +88,8 @@ const TESTIMONIALS = [
 
 const FAQS = [
   {
-    q: "How does Pathora generate roadmaps?",
-    a: "Pathora uses large language models — Llama3 for free users, GPT-4o for Pro — to build a structured, phase-by-phase curriculum from your topic, difficulty, and goal. Every output is validated through Pydantic schemas before delivery.",
+    q: "How does Nexpath generate roadmaps?",
+    a: "Nexpath uses large language models — Llama3 for free users, GPT-4o for Pro — to build a structured, phase-by-phase curriculum from your topic, difficulty, and goal. Every output is validated through Pydantic schemas before delivery.",
   },
   {
     q: "Is the free plan actually free?",
@@ -105,7 +105,7 @@ const FAQS = [
   },
   {
     q: "What topics can I build roadmaps for?",
-    a: "Anything — programming, design, finance, languages, cloud infrastructure, data science, writing, business strategy. Pathora is completely topic-agnostic.",
+    a: "Anything — programming, design, finance, languages, cloud infrastructure, data science, writing, business strategy. Nexpath is completely topic-agnostic.",
   },
   {
     q: "Is my data secure?",
@@ -141,7 +141,7 @@ function Nav() {
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-[#00c896] text-[22px] leading-none font-display font-bold">◈</span>
-          <span className="font-display font-extrabold text-[18px] tracking-tight">Pathora</span>
+          <span className="font-display font-extrabold text-[18px] tracking-tight">Nexpath</span>
         </div>
 
         <div className="hidden md:flex items-center gap-7 text-[13.5px] text-[#6b7585]">
@@ -173,9 +173,10 @@ function Nav() {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      <div aria-hidden="true" className="absolute inset-0 dot-grid opacity-50 pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 mesh-bg pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
       <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,transparent_30%,#05080f_80%)] pointer-events-none" />
-      <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-[#00c896]/[.05] blur-[120px] pointer-events-none" />
+      <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-[#00c896]/[.04] blur-[130px] pointer-events-none" />
 
       {/* Floating nodes */}
       <div aria-hidden="true" className="absolute inset-0 overflow-hidden pointer-events-none select-none hidden md:block">
@@ -221,16 +222,16 @@ function Hero() {
             AI-Powered Learning Paths
           </div>
 
-          <h1 className="font-display text-[clamp(3rem,7vw,5.25rem)] font-extrabold leading-[0.92] tracking-tight mb-8">
+          <h1 className="font-display text-[clamp(3.5rem,8vw,6rem)] font-extrabold leading-[0.9] tracking-tight mb-8">
             Learn anything.
             <br />
-            <span className="text-[#00c896]">Master it</span>
+            <span className="shimmer-text">Master it</span>
             <br />
             faster.
           </h1>
 
           <p className="text-[#7b8794] text-[1.1rem] md:text-[1.2rem] leading-relaxed max-w-[500px] mb-11">
-            Pick a topic, set your goal. Pathora&apos;s AI generates a personalized step-by-step roadmap and
+            Pick a topic, set your goal. Nexpath&apos;s AI generates a personalized step-by-step roadmap and
             tracks your progress every single day.
           </p>
 
@@ -247,20 +248,34 @@ function Hero() {
             </a>
           </div>
 
-          <div className="mt-14 flex items-center gap-5 text-[13px] text-[#6b7585]">
-            <div className="flex -space-x-2.5">
-              {["AM", "PS", "RN", "KS", "VG"].map((init) => (
-                <div
-                  key={init}
-                  className="w-8 h-8 rounded-full bg-[#0d1117] border-2 border-[#05080f] flex items-center justify-center text-[9px] font-bold text-[#00c896]"
-                >
-                  {init}
+          <div className="mt-14 flex flex-wrap items-center gap-6 text-[13px] text-[#6b7585]">
+            <div className="flex items-center gap-3">
+              <div className="flex -space-x-2.5">
+                {["AM", "PS", "RN", "KS", "VG"].map((init) => (
+                  <div
+                    key={init}
+                    className="w-8 h-8 rounded-full bg-[#0d1117] border-2 border-[#05080f] flex items-center justify-center text-[9px] font-bold text-[#00c896]"
+                  >
+                    {init}
+                  </div>
+                ))}
+              </div>
+              <span>
+                Join <strong className="text-[#e8edf4] font-semibold">2,000+</strong> learners
+              </span>
+            </div>
+            <div className="hidden sm:flex items-center gap-4 border-l border-white/[.06] pl-6">
+              {[
+                { n: "10s", label: "avg. generation" },
+                { n: "45+", label: "topics avg." },
+                { n: "100%", label: "free to start" },
+              ].map((s) => (
+                <div key={s.label} className="text-center">
+                  <p className="font-display font-bold text-[15px] text-[#e8edf4]">{s.n}</p>
+                  <p className="text-[10px] font-mono text-[#4a5568]">{s.label}</p>
                 </div>
               ))}
             </div>
-            <span>
-              Join <strong className="text-[#e8edf4] font-semibold">2,000+</strong> learners already on track
-            </span>
           </div>
         </div>
       </div>
@@ -275,51 +290,77 @@ function HowItWorks() {
       title: "Pick your topic",
       desc: "Enter what you want to learn, your current level, and the specific goal you want to reach.",
       color: "#00c896",
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="8" stroke="#00c896" strokeWidth="1.5" />
+          <path d="M7 11h8M11 7v8" stroke="#00c896" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      ),
     },
     {
       n: "02",
       title: "AI builds your roadmap",
       desc: "Our AI generates a structured, phase-by-phase curriculum in under 10 seconds. No fluff.",
       color: "#f0a500",
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <path d="M4 7h14M4 11h10M4 15h7" stroke="#f0a500" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="17" cy="15" r="3" stroke="#f0a500" strokeWidth="1.5" />
+          <path d="M16 15l.8.8L18.5 14" stroke="#f0a500" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
     },
     {
       n: "03",
       title: "Learn and track",
       desc: "Check off topics as you finish them. Maintain streaks. Watch your progress compound.",
       color: "#00c896",
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect x="3" y="3" width="16" height="16" rx="3" stroke="#00c896" strokeWidth="1.5" />
+          <path d="M7 11l2.5 2.5L15 8" stroke="#00c896" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-32 relative">
+    <section id="how-it-works" className="py-36 relative">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="text-center mb-24">
+        <div className="text-center mb-20">
           <p className="text-[#00c896] text-[11px] font-mono tracking-[.18em] uppercase mb-4">Process</p>
           <h2 className="font-display text-[clamp(2rem,4.5vw,3.25rem)] font-bold">
             Three steps to clarity
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10 relative">
-          <div aria-hidden="true" className="hidden md:block absolute top-[2.85rem] left-[calc(33%+1.5rem)] right-[calc(33%+1.5rem)] h-px bg-gradient-to-r from-[#00c896]/25 via-[#f0a500]/25 to-[#00c896]/25" />
+        <div className="grid md:grid-cols-3 gap-6 relative">
+          <div aria-hidden="true" className="hidden md:block absolute top-[2.6rem] left-[calc(33%+2rem)] right-[calc(33%+2rem)] h-px bg-gradient-to-r from-[#00c896]/20 via-[#f0a500]/20 to-[#00c896]/20" />
 
           {steps.map((step, i) => (
-            <div key={i} className="relative">
+            <div
+              key={i}
+              className="relative p-6 rounded-2xl border border-white/[.05] bg-[#0b0f1a]/40 hover:border-white/[.09] transition-colors duration-300"
+            >
+              {/* Icon container */}
+              <div
+                className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                style={{ background: `${step.color}10`, border: `1px solid ${step.color}25` }}
+              >
+                {step.icon}
+              </div>
+
+              {/* Ghost number */}
               <div
                 aria-hidden="true"
-                className="font-display text-[80px] font-extrabold leading-none mb-1 select-none"
-                style={{ color: step.color, opacity: 0.1 }}
+                className="absolute top-5 right-5 font-display text-[42px] font-extrabold leading-none select-none"
+                style={{ color: step.color, opacity: 0.07 }}
               >
                 {step.n}
               </div>
-              <div
-                className="w-11 h-11 rounded-full border-2 flex items-center justify-center text-sm font-bold -mt-[60px] relative z-10 bg-[#05080f] mb-6"
-                style={{ borderColor: step.color, color: step.color }}
-              >
-                {i + 1}
-              </div>
-              <h3 className="font-display text-xl font-bold mb-3">{step.title}</h3>
-              <p className="text-[#6b7585] text-[15px] leading-relaxed">{step.desc}</p>
+
+              <h3 className="font-display text-[18px] font-bold mb-2.5">{step.title}</h3>
+              <p className="text-[#6b7585] text-[14px] leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -347,9 +388,11 @@ function Features() {
           {FEATURES.map((f, i) => (
             <div
               key={i}
-              className="group p-7 rounded-2xl border border-white/[.05] bg-[#0b0f1a]/50 hover:border-[#00c896]/25 hover:bg-[#0b0f1a] transition-all duration-300"
+              className="feature-card group p-7 rounded-2xl border border-white/[.05] bg-[#0b0f1a]/50 hover:border-[#00c896]/20 hover:bg-[#0b0f1a] transition-all duration-300"
             >
-              <div className="text-[26px] mb-5 text-[#00c896] leading-none">{f.icon}</div>
+              <div className="w-11 h-11 rounded-xl bg-[#00c896]/[.08] border border-[#00c896]/15 flex items-center justify-center text-[20px] text-[#00c896] leading-none mb-5">
+                {f.icon}
+              </div>
               <h3 className="font-display text-[17px] font-semibold mb-2.5">{f.title}</h3>
               <p className="text-[#6b7585] text-[14px] leading-relaxed">{f.desc}</p>
             </div>
@@ -474,7 +517,9 @@ function Pricing() {
         <div className="grid md:grid-cols-2 gap-6 max-w-[760px] mx-auto">
           {/* Free */}
           <div className="p-8 rounded-2xl border border-white/[.07] bg-[#0b0f1a]">
-            <p className="text-[#6b7585] text-[13px] mb-2 font-mono tracking-wide">FREE</p>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-[#6b7585] text-[13px] font-mono tracking-wide">FREE</p>
+            </div>
             <div className="flex items-end gap-1 mb-7">
               <span className="font-display text-5xl font-bold">₹0</span>
               <span className="text-[#6b7585] text-sm mb-2">/month</span>
@@ -485,7 +530,10 @@ function Pricing() {
             <ul className="space-y-3">
               {FREE_FEATURES.map((f) => (
                 <li key={f} className="flex items-center gap-3 text-[13.5px] text-[#6b7585]">
-                  <span aria-hidden="true" className="text-[#6b7585]/40 text-[10px]">◦</span>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="flex-shrink-0 opacity-30">
+                    <circle cx="7" cy="7" r="6" stroke="#6b7585" strokeWidth="1.2" />
+                    <path d="M4.5 7l1.8 1.8L9.5 5" stroke="#6b7585" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                   {f}
                 </li>
               ))}
@@ -493,13 +541,16 @@ function Pricing() {
           </div>
 
           {/* Pro */}
-          <div className="relative p-8 rounded-2xl border border-[#00c896]/35 bg-[#0b0f1a] accent-glow">
+          <div className="relative p-8 rounded-2xl border border-[#00c896]/35 bg-gradient-to-b from-[#00c896]/[.04] to-[#0b0f1a] accent-glow">
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
               <span className="bg-[#00c896] text-[#05080f] text-[10px] font-bold px-3.5 py-1.5 rounded-full tracking-widest">
                 MOST POPULAR
               </span>
             </div>
-            <p className="text-[#00c896] text-[13px] mb-2 font-mono tracking-wide">PRO</p>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-[#00c896] text-[13px] font-mono tracking-wide">PRO</p>
+              <span className="text-[10px] bg-[#f0a500]/10 text-[#f0a500] border border-[#f0a500]/25 px-2 py-0.5 rounded font-mono">BEST VALUE</span>
+            </div>
             <div className="flex items-end gap-1 mb-7">
               <span className="font-display text-5xl font-bold">₹999</span>
               <span className="text-[#6b7585] text-sm mb-2">/month</span>
@@ -510,7 +561,10 @@ function Pricing() {
             <ul className="space-y-3">
               {PRO_FEATURES.map((f) => (
                 <li key={f} className="flex items-center gap-3 text-[13.5px]">
-                  <span aria-hidden="true" className="text-[#00c896] text-[10px]">◆</span>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="flex-shrink-0">
+                    <circle cx="7" cy="7" r="6" fill="#00c896" fillOpacity="0.15" stroke="#00c896" strokeWidth="1.2" />
+                    <path d="M4.5 7l1.8 1.8L9.5 5" stroke="#00c896" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                   {f}
                 </li>
               ))}
@@ -535,12 +589,13 @@ function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <div
               key={i}
-              className="p-7 rounded-2xl border border-white/[.05] bg-[#0b0f1a]/60 hover:border-white/10 transition-colors duration-300"
+              className="feature-card p-7 rounded-2xl border border-white/[.05] bg-[#0b0f1a]/60 hover:border-white/[.09] flex flex-col"
             >
-              <p aria-hidden="true" className="text-[#00c896] text-[32px] font-display leading-none mb-4">&ldquo;</p>
-              <p className="text-[#b8c1cf] text-[14px] leading-relaxed mb-7">{t.quote}</p>
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#111827] border border-white/10 flex items-center justify-center text-[10px] font-bold text-[#00c896] flex-shrink-0">
+              {/* Stars */}
+              <p aria-label="5 out of 5 stars" className="stars text-[14px] mb-4 tracking-wider">★★★★★</p>
+              <p className="text-[#b8c1cf] text-[14px] leading-relaxed mb-7 flex-1">{t.quote}</p>
+              <div className="flex items-center gap-3 pt-4 border-t border-white/[.04]">
+                <div className="w-9 h-9 rounded-full bg-[#00c896]/10 border border-[#00c896]/20 flex items-center justify-center text-[10px] font-bold text-[#00c896] flex-shrink-0">
                   {t.initials}
                 </div>
                 <div>
@@ -577,7 +632,7 @@ function FAQ() {
                   +
                 </span>
               </summary>
-              <div className="px-6 pb-5 pt-3.5 text-[#6b7585] text-[13.5px] leading-relaxed border-t border-white/[.04]">
+              <div className="faq-content px-6 pb-5 pt-3.5 text-[#6b7585] text-[13.5px] leading-relaxed border-t border-white/[.04]">
                 {faq.a}
               </div>
             </details>
@@ -628,7 +683,7 @@ function Footer() {
           <div className="sm:col-span-2 md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <span className="text-[#00c896] text-[20px] leading-none font-display font-bold">◈</span>
-              <span className="font-display font-extrabold text-[18px]">Pathora</span>
+              <span className="font-display font-extrabold text-[18px]">Nexpath</span>
             </div>
             <p className="text-[#6b7585] text-[13.5px] leading-relaxed max-w-[280px]">
               AI-powered personalized learning roadmaps. Learn anything, structured and focused.
@@ -663,7 +718,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-white/[.05] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-[#6b7585] text-[12px]">© 2026 Pathora. All rights reserved.</span>
+          <span className="text-[#6b7585] text-[12px]">© 2026 Nexpath. All rights reserved.</span>
           <span className="text-[#6b7585] text-[12px] font-mono">Built with AI · Powered by curiosity</span>
         </div>
       </div>

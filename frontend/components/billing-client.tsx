@@ -105,7 +105,7 @@ function UpgradeCard({
         key: order.razorpay_key_id,
         amount: order.amount,
         currency: order.currency,
-        name: "Pathora",
+        name: "Nexpath",
         description: "Pro Plan — Monthly",
         order_id: order.order_id,
         prefill: { name: userName ?? "", email: userEmail ?? "" },

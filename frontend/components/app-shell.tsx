@@ -78,7 +78,7 @@ function Sidebar({
               ◈
             </span>
             <span className="font-display font-extrabold text-[17px] tracking-tight text-[#e8edf4]">
-              Pathora
+              Nexpath
             </span>
           </Link>
         </div>
@@ -208,7 +208,7 @@ export function AppShell({
             </svg>
           </button>
           <span className="font-display font-extrabold text-[16px] tracking-tight text-[#e8edf4]">
-            Pathora
+            Nexpath
           </span>
         </header>
 

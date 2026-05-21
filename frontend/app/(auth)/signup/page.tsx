@@ -71,11 +71,14 @@ export default function SignupPage() {
   })();
 
   return (
-    <div className="min-h-screen bg-[#05080f] flex items-center justify-center px-5 py-16">
+    <div className="min-h-screen bg-[#05080f] flex items-center justify-center px-5 py-16 relative overflow-hidden">
+      {/* Background pattern */}
+      <div aria-hidden="true" className="fixed inset-0 dot-grid opacity-30 pointer-events-none" />
+      <div aria-hidden="true" className="fixed inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_40%,transparent_30%,#05080f_80%)] pointer-events-none" />
       {/* Ambient glow */}
       <div
         aria-hidden="true"
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[350px] rounded-full bg-[#00c896]/[.04] blur-[100px] pointer-events-none"
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-[#00c896]/[.05] blur-[120px] pointer-events-none"
       />
 
       <div className="relative w-full max-w-[420px]">
@@ -84,7 +87,7 @@ export default function SignupPage() {
           <Link href="/" className="inline-flex items-center gap-2 group">
             <span className="text-[#00c896] text-[22px] leading-none font-display font-bold">◈</span>
             <span className="font-display font-extrabold text-[20px] tracking-tight text-[#e8edf4]">
-              Pathora
+              Nexpath
             </span>
           </Link>
           <p className="text-[#6b7585] text-[13px] mt-3">Create your free account. No card required.</p>

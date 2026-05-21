@@ -48,7 +48,7 @@ def clear_client_cookies(client):
 
 @pytest.fixture(scope="module")
 def test_user(client):
-    email = f"test_{uuid.uuid4().hex[:8]}@pathora-test.com"
+    email = f"test_{uuid.uuid4().hex[:8]}@nexpath-test.com"
     resp = client.post(
         "/auth/signup",
         json={"email": email, "password": _TEST_PASSWORD, "full_name": "Test User"},

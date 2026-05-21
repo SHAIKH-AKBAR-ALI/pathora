@@ -46,7 +46,7 @@ def test_get_roadmap_wrong_user(client, auth_cookies, mock_llm):
     assert create.status_code == 201
     roadmap_id = create.json()["data"]["id"]
 
-    email2 = f"other_{uuid.uuid4().hex[:8]}@pathora-test.com"
+    email2 = f"other_{uuid.uuid4().hex[:8]}@nexpath-test.com"
     signup2 = client.post("/auth/signup", json={
         "email": email2,
         "password": _TEST_PASSWORD,

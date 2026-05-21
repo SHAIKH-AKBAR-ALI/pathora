@@ -35,7 +35,7 @@ function RoadmapCard({ roadmap }: { roadmap: Roadmap }) {
   return (
     <Link
       href={`/roadmaps/${roadmap.id}`}
-      className="group block p-6 rounded-2xl border border-white/[.05] bg-[#0b0f1a]/60 hover:border-[#00c896]/25 hover:bg-[#0b0f1a] transition-all duration-200"
+      className="group block p-6 rounded-2xl border border-white/[.05] bg-[#0b0f1a]/60 hover:border-[#00c896]/25 hover:bg-[#0b0f1a] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(0,0,0,.4)]"
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="min-w-0 flex-1">
@@ -129,24 +129,24 @@ export default async function DashboardPage() {
 
       {/* Stats row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-        <div className="p-4 rounded-xl border border-white/[.05] bg-[#0b0f1a]/50">
+        <div className="stat-card p-4 rounded-xl border border-white/[.05] bg-[#0b0f1a]/50" style={{ "--stat-color": "#00c896" } as React.CSSProperties}>
           <p className="text-[#6b7585] text-[11px] font-mono uppercase tracking-wide mb-1">
             Roadmaps
           </p>
-          <p className="font-display text-[24px] font-bold text-[#e8edf4]">
+          <p className="font-display text-[26px] font-bold text-[#e8edf4]">
             {roadmaps.length}
           </p>
         </div>
-        <div className="p-4 rounded-xl border border-white/[.05] bg-[#0b0f1a]/50">
+        <div className="stat-card p-4 rounded-xl border border-white/[.05] bg-[#0b0f1a]/50" style={{ "--stat-color": "#f0a500" } as React.CSSProperties}>
           <p className="text-[#6b7585] text-[11px] font-mono uppercase tracking-wide mb-1">
             Day Streak
           </p>
-          <p className="font-display text-[24px] font-bold text-[#f0a500]">
+          <p className="font-display text-[26px] font-bold text-[#f0a500]">
             {streak}
             <span className="text-[14px] ml-0.5">🔥</span>
           </p>
         </div>
-        <div className="p-4 rounded-xl border border-white/[.05] bg-[#0b0f1a]/50">
+        <div className="stat-card p-4 rounded-xl border border-white/[.05] bg-[#0b0f1a]/50" style={{ "--stat-color": "#f0a500" } as React.CSSProperties}>
           <p className="text-[#6b7585] text-[11px] font-mono uppercase tracking-wide mb-1">
             Plan
           </p>
@@ -158,7 +158,7 @@ export default async function DashboardPage() {
             {user?.role === "paid" ? "Pro ◆" : "Free"}
           </p>
         </div>
-        <div className="p-4 rounded-xl border border-white/[.05] bg-[#0b0f1a]/50">
+        <div className="stat-card p-4 rounded-xl border border-white/[.05] bg-[#0b0f1a]/50" style={{ "--stat-color": "#00c896" } as React.CSSProperties}>
           <p className="text-[#6b7585] text-[11px] font-mono uppercase tracking-wide mb-1">
             Phases Total
           </p>

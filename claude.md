@@ -1,11 +1,11 @@
-# Pathora — Project Context
+# Nexpath — Project Context
 
 ## What we are building
 An AI-powered education and learning platform (SaaS).
 Users pick a topic + difficulty level + goal → AI generates a personalized 
 step-by-step learning roadmap.
 Monetized via Stripe subscriptions (free vs paid plans).
-Product name: Pathora
+Product name: Nexpath
 
 ---
 

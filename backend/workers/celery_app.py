@@ -4,7 +4,7 @@ from kombu import Queue
 from backend.core.config import settings
 
 celery_app = Celery(
-    "pathora",
+    "nexpath",
     broker=settings.upstash_redis_url,
     backend=settings.upstash_redis_url,
 )
