@@ -13,7 +13,7 @@ AI-powered personalized learning roadmap platform. Pick a topic, set your goal, 
 
 ## Current Status
 
-- **Build Progress:** All 10 Phases Complete (V1 MVP)
+- **Build Progress:** V1 Complete — All 10 phases done, production-ready
 - **Status:** [x] MVP Backend Ready, [x] Landing Page Live, [x] Full App UI Operational
 
 ## Environment Variables

@@ -89,17 +89,24 @@ export default async function DashboardPage() {
   const cookieStore = await cookies();
   if (!cookieStore.has("access_token")) redirect("/login");
 
-  const [userRes, roadmapsRes, streakRes] = await Promise.all([
-    serverFetch<User>("/auth/me"),
-    serverFetch<Roadmap[]>("/roadmaps"),
-    serverFetch<StreakData>("/progress/streak"),
-  ]);
+  let user: User | null = null;
+  let roadmaps: Roadmap[] = [];
+  let streak = 0;
 
-  const user = userRes.data;
-  const roadmaps = roadmapsRes.data ?? [];
-  const streak = streakRes.data?.streak ?? 0;
+  try {
+    const [userRes, roadmapsRes, streakRes] = await Promise.all([
+      serverFetch<User>("/auth/me"),
+      serverFetch<Roadmap[]>("/roadmaps"),
+      serverFetch<StreakData>("/progress/streak"),
+    ]);
+    user = userRes.data;
+    roadmaps = roadmapsRes.data ?? [];
+    streak = streakRes.data?.streak ?? 0;
+  } catch {
+    // Partial failure — render with whatever we have (empty state)
+  }
 
-  const firstName = user?.full_name?.split(" ")[0] ?? user?.email.split("@")[0] ?? "there";
+  const firstName = user?.full_name?.split(" ")[0] ?? user?.email?.split("@")[0] ?? "there";
 
   return (
     <div className="px-6 py-8 max-w-5xl mx-auto">

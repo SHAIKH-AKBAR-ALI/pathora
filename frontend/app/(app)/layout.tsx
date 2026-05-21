@@ -9,15 +9,21 @@ export default async function AppLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = await cookies();
-  if (!cookieStore.has("access_token")) {
+  try {
+    const cookieStore = await cookies();
+    if (!cookieStore.has("access_token")) {
+      redirect("/login");
+    }
+
+    const res = await serverFetch<User>("/auth/me");
+    if (!res.success || !res.data) {
+      redirect("/login");
+    }
+
+    return <AppShell user={res.data}>{children}</AppShell>;
+  } catch (err) {
+    // redirect() throws internally — let it propagate; catch everything else
+    if (err instanceof Error && err.message === "NEXT_REDIRECT") throw err;
     redirect("/login");
   }
-
-  const res = await serverFetch<User>("/auth/me");
-  if (!res.success || !res.data) {
-    redirect("/login");
-  }
-
-  return <AppShell user={res.data}>{children}</AppShell>;
 }

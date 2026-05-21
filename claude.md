@@ -336,3 +336,6 @@ AWS_REGION
 - Celery beat schedules use crontab (not intervals): daily reset at midnight, monthly reset on 1st
 - Streak is per-roadmap, based on UTC timezone
 - Payment provider is Razorpay (India), amount in paise (99900 = ₹999/month), supports UPI + cards + netbanking
+- Frontend runs on: cd frontend && npm run dev
+- Backend runs on: uvicorn backend.main:app --reload (from project root)
+- All 10 phases complete as of May 22, 2026
