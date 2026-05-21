@@ -17,6 +17,7 @@ class UsageLimit(Base):
     ai_explanations_used_today: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     resume_analyses_used_this_month: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     reset_date: Mapped[datetime | None] = mapped_column(Date, nullable=True)
+    updated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
 
     __table_args__ = (Index("ix_usage_limits_user_id", "user_id"),)
