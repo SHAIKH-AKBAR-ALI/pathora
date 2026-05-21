@@ -90,16 +90,16 @@
 
 ## Phase 6 — Progress Tracking
 **Goal:** Users can track their learning progress.
-**Status:** [ ] NOT STARTED
+**Status:** [x] COMPLETE (May 22, 2026)
 
 ### Tasks
-- [ ] Check off individual topics in roadmap
-- [ ] Progress bar per roadmap
-- [ ] Streak tracking (daily activity)
-- [ ] Progress saved to DB
-- [ ] Dashboard shows all roadmaps + progress
-- [ ] Celery job resets daily counts at midnight
-- [ ] Celery job resets monthly counts on 1st
+- [x] Check off individual topics in roadmap
+- [x] Progress bar per roadmap
+- [x] Streak tracking (daily activity)
+- [x] Progress saved to DB
+- [x] Dashboard shows all roadmaps + progress
+- [x] Celery job resets daily counts at midnight
+- [x] Celery job resets monthly counts on 1st
 
 ---
 

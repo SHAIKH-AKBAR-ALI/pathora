@@ -333,3 +333,5 @@ AWS_REGION
 - Redis caching enabled for roadmaps (24hr TTL, keyed by SHA-256 of topic+difficulty+goal)
 - Explain endpoint: 5/day limit for free users
 - Why endpoint: no usage limit
+- Celery beat schedules use crontab (not intervals): daily reset at midnight, monthly reset on 1st
+- Streak is per-roadmap, based on UTC timezone
