@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"D:\\\\PROJECTS\\\\edtech\" -Recurse -Directory)",
+      "Bash(Select-Object FullName)",
+      "Read(//mnt/d/PROJECTS/**)",
+      "Bash(npx skills *)",
+      "mcp__supabase__list_tables",
+      "mcp__supabase__get_project_url",
+      "Bash(Get-Content *)",
+      "Bash(alembic upgrade *)",
+      "Bash(.venv/Scripts/python.exe -m alembic -c backend/alembic.ini upgrade head)",
+      "Bash(python -c \"import sys; sys.path.insert\\(0,'D:/PROJECTS/edtech/backend'\\); from core.config import settings; print\\(repr\\(settings.database_url\\)\\)\")"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "supabase"
+  ]
+}
