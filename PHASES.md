@@ -184,4 +184,4 @@
 | 7 | Razorpay Subscription | [x] |
 | 8 | Admin Panel | [x] |
 | 9 | Landing Page | [x] |
-| 10 | Frontend App UI | [ ] |
+| 10 | Frontend App UI | [x] |
