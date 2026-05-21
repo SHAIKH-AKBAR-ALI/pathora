@@ -314,3 +314,15 @@ AWS_REGION
 - Every LLM response validated through Pydantic
 - Soft deletes on all DB tables
 - Every endpoint has rate limiting
+
+---
+
+## Build Notes
+- Python 3.11.9 is the required version (3.14 not supported)
+- Use SESSION POOLER connection string for Supabase (not direct, not transaction pooler)
+- Add statement_cache_size=0 to all asyncpg engine connections
+- Enum types use DO block with EXCEPTION WHEN duplicate_object pattern
+- asyncpg==0.29.0 and pydantic-settings==2.6.1 added to requirements.txt
+- Migration command: alembic -c backend/alembic.ini upgrade head (run from project root)
+- bcrypt must be pinned to 4.0.1 (newer versions break passlib)
+- uvicorn run command: uvicorn backend.main:app --reload (from project root)
