@@ -4,10 +4,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from slowapi.errors import RateLimitExceeded
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from backend.api.admin import router as admin_router
 from backend.api.auth import router as auth_router
+from backend.api.payment import router as payment_router
 from backend.api.progress import router as progress_router
 from backend.api.roadmap import router as roadmap_router
-from backend.api.payment import router as payment_router
 from backend.core.limiter import limiter
 from backend.core.middleware import (
     global_exception_handler,
@@ -37,6 +38,7 @@ app.include_router(auth_router)
 app.include_router(roadmap_router)
 app.include_router(progress_router)
 app.include_router(payment_router)
+app.include_router(admin_router)
 
 
 @app.get("/health")

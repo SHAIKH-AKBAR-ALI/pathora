@@ -122,16 +122,16 @@
 
 ## Phase 8 — Admin Panel
 **Goal:** Full admin control over users, plans, and platform.
-**Status:** [ ] NOT STARTED
+**Status:** [x] COMPLETE (May 22, 2026)
 
 ### Tasks
-- [ ] Admin role middleware (server side check)
-- [ ] Admin endpoints: list users, ban/suspend, change plan
-- [ ] Usage stats endpoint (roadmaps generated, AI calls, revenue)
-- [ ] Feature flags table + toggle endpoint
-- [ ] Frontend: admin dashboard UI
-- [ ] Revenue overview (Stripe data)
-- [ ] User management table (search, filter, ban)
+- [x] Admin role middleware (server side check)
+- [x] Admin endpoints: list users, ban/suspend, change plan
+- [x] Usage stats endpoint (roadmaps generated, AI calls, revenue)
+- [x] Feature flags table + toggle endpoint
+- [x] Frontend: admin dashboard UI
+- [x] Revenue overview (Razorpay data)
+- [x] User management table (search, filter, ban)
 
 ---
 
